@@ -2,7 +2,7 @@
 This is a generic project template which we can use to fork whenever we start new web application projects at EventMAP.  It features the Osc.Db submodule for the shared data set.
 
 ## Important
-Please do not push changes intended for your new project to this repo.  Only changes to the wireframe should be pushed here.
+Please do not push changes intended for your new project to this repo.  Only changes to the wireframe should be pushed here.  To start your project, create a mirror copy of this repo, following these steps: https://help.github.com/articles/duplicating-a-repository/
 
 ## Prerequisites
 - .NET Core 2.0 SDK
