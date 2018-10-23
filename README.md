@@ -1,7 +1,7 @@
 # OscApp
 This is a generic project template which we can use to fork whenever we start new web application projects at EventMAP.  It features the Osc.Db submodule for the shared data set.
 
-*Important*
+## Important
 Please do not push changes intended for your new project to this repo.  Only changes to the wireframe should be pushed here.
 
 ## Prerequisites
