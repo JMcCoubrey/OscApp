@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="image/png" href="~/images/favicon.ico" />
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300|Open+Sans:300,400,600,700|Roboto:700,500,400,300' rel='stylesheet' type='text/css' />
+    <link href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    @RenderSection("styles", required: false)
+    
+    <title>Osc App - @ViewData["Title"]</title>
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+
+    @Html.WebpackAsset("vendor")
+    @Html.WebpackAsset("login")
+
+</body>
+</html>

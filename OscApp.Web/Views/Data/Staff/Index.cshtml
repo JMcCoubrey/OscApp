@@ -1,0 +1,87 @@
+﻿@model OscApp.Model.DataViewModels.GenericDataViewModel<Osc.Db.Staff>
+@{
+    ViewData["Title"] = "Staff Management";
+}
+
+<div class="container-fluid" id="main-content">
+
+    <div class="row pad-bottom">
+        <div class="col-sm-8">
+            <h2><span class="badge badge-primary">@Model.TotalNumResults</span> <span data-term="trainer" class="text-capitalize">Staff</span> Management</h2>
+        </div>
+        <div class="col-sm-3">
+            <form asp-action="Index" method="get">
+                <input type="text" class="form-control" name="searchTerm" value="@Model.SearchTerm" id="search-input" />
+            </form>
+
+        </div>
+        <div class="col-sm-1 text-right">
+            <button id="add-btn" class="btn btn-primary"><span class="osci osci-plus"></span> Create</button>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="table table-primary table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Description</th>
+                    <th>Line Manager</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in @Model.Models)
+                {
+                    <tr data-id="@item.OptimeIndex">
+                        <td>@item.Id</td>
+                        <td>@item.Description</td>
+                        <td>@item.LineManager</td>
+                        <td class="text-right">
+                            <button class="btn btn-transparent edit-btn" data-id="@item.OptimeIndex">
+                                <span class="osci osci-pen"></span>
+                            </button>
+                            <button class="btn btn-transparent delete-btn" data-id="@item.OptimeIndex">
+                                <span class="osci osci-delete"></span>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <nav>
+        <ul class="pagination justify-content-center">
+
+            @if (Model.NumPages > 1)
+            {
+                <li class="page-item @(Model.CurrentPageNumber == 1 ? "disabled" : null)">
+                    <a class="page-link" href="?skip=@(Model.Skip - Model.Take)&take=@Model.Take&searchTerm=@Model.SearchTerm" tabindex="-1">
+                        <span class="osci osci-chevron-left"></span>
+                    </a>
+                </li>
+            }
+
+            @for (int i = 1; i <= Model.NumPages; i++)
+            {
+                <li class="page-item @((Model.CurrentPageNumber == 0 && i == 1) || Model.CurrentPageNumber == i ? "active" : null)">
+                    <a class="page-link" href="?skip=@(Model.Take * (i-1))&take=@Model.Take&searchTerm=@Model.SearchTerm">@i</a>
+                </li>
+            }
+
+            @if (Model.NumPages > 1)
+            {
+                <li class="page-item @(Model.CurrentPageNumber == Model.NumPages ? "disabled" : null)">
+                    <a class="page-link" href="?skip=@(Model.Skip + Model.Take)&take=@Model.Take&searchTerm=@Model.SearchTerm" tabindex="-1">
+                        <span class="osci osci-chevron-right"></span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>
+
+@section Scripts {
+    @Html.WebpackAsset("staff")
+}

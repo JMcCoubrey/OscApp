@@ -1,0 +1,33 @@
+﻿@inject Osc.Db.Tenancy Tenant
+<!-- As a heading -->
+<div class="navbar-wrapper">
+    <nav class="navbar">
+
+        <div class="navbar-content row">
+            <div class="institution-name col">@Tenant.DisplayName</div>
+
+            <div class="col"></div>
+
+            <div class="col"></div>
+
+            <div class="dropdown avatar-dropdown" data-step="4" data-intro="Access help and account options here.">
+
+                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                    <img class="avatar sm" src="../images/avatar.png" />
+                    <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <a asp-controller="Manage" asp-action="Index" class="btn btn-link navbar-btn navbar-link">Profile</a>
+                    </li>
+                    <li>
+                        <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+                            <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

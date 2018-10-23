@@ -1,0 +1,66 @@
+{
+  "name": "oscapp",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.js",
+    "prod": "webpack -p --config webpack.prod.config.js --progress --colors",
+    "test": "jest"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|hbs)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "assets-webpack-plugin": "^3.5.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "backbone": "^1.3.3",
+    "backbone.marionette": "^3.5.1",
+    "bootstrap": "^4.1.1",
+    "bootstrap-daterangepicker": "^3.0.2",
+    "bootstrap-datetimepicker": "0.0.7",
+    "bootstrap-select": "^1.13.1",
+    "bootstrap-timepicker": "^0.5.2",
+    "css-loader": "^0.28.2",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "file-loader": "^1.1.11",
+    "fs": "0.0.1-security",
+    "handlebars": "^4.0.11",
+    "handlebars-loader": "^1.7.0",
+    "jest": "^22.4.3",
+    "jest-junit": "^3.7.0",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-dist": "^1.12.1",
+    "js-cookie": "^2.2.0",
+    "lodash-amd": "^4.17.10",
+    "moment": "^2.22.1",
+    "node-sass": "^4.5.3",
+    "osc-style": "git+ssh://git@github.com:EventMAP/osc-style.git#master",
+    "popper": "latest",
+    "popper.js": "^1.14.3",
+    "regions-extras": "^2.1.2",
+    "sass-loader": "^6.0.5",
+    "select2": "4.0.3",
+    "style-loader": "^0.18.1",
+    "toastr": "^2.1.4",
+    "underscore": "^1.9.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-notifier": "^1.5.0"
+  },
+  "dependencies": {
+    "bootstrap-year-calendar": "^1.1.1",
+    "intro.js": "^2.8.0-alpha.1",
+    "protip": "^1.4.16",
+    "webui-popover": "^1.2.18"
+  }
+}

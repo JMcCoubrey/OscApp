@@ -1,0 +1,44 @@
+﻿@import 'shared.scss';
+
+#main-content {
+    padding-top: 20px;
+}
+
+.jumbotron {
+    color: var(--white);
+    background: url('../images/bg.png') center left;
+    background-size: cover;
+    text-align: center;
+    border-radius: 0 !important;
+    margin-bottom: 0;
+    z-index: 3;
+
+    .home-stat {
+        display: inline-block;
+        padding: 0 40px;
+        text-align: center;
+
+        .num {
+            display: block;
+            font-size: 60px;
+        }
+
+        .label {
+            display: block;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        border-right: 2px solid white;
+    }
+
+    .home-stat:last-of-type {
+        border-right: none;
+    }
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 28px;
+    color: var(--dark-grey-blue-two);
+}

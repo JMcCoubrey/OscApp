@@ -1,0 +1,85 @@
+﻿@import 'shared.scss';
+
+body {
+    background: url('../images/bg.png') !important;
+    background-size: cover !important;
+}
+
+a:link, a:visited {
+    color: var(--dark-sky-blue);
+    text-decoration: underline;
+}
+
+
+.body-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.login-logo {
+    width: 20px;
+}
+
+.login-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: table;
+    z-index: 2;
+}
+
+.login-content {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.login-box {
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    color: var(--white);
+
+    button {
+        margin-top: 0;
+        width: 100%;
+        background: var(--dark-sky-blue);
+        border: none;
+        transition: background 0.5s;
+        transition: color 0.5s;
+    }
+
+    button:hover {
+        background: var(--white);
+        color: var(--dark-sky-blue);
+    }
+
+    input {
+        border-radius: 2px;
+    }
+
+    .form-group {
+        margin-bottom: 4px;
+    }
+}
+
+.disclaimer-container {
+    font-size: 12px;
+}
+
+.optime-logo {
+    display: inline-block;
+    background: url('../images/optime_logo.png');
+    width: 48px;
+    height: 48px;
+}

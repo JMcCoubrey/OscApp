@@ -1,0 +1,31 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Log in";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+<div class="login-box">
+    <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+        @*<img src="~/images/optime_logo.png" class="login-logo" />*@
+        <h2>[Logo Here]</h2>
+        <div class="alert text-danger">
+            <p class="text-danger" @Html.ValidationMessage("CustomError")</p>
+        </div>
+
+        <div class="form-group">
+            <input asp-for="Email" class="form-control" placeholder="address@emailprovider.com" />
+        </div>
+        <div class="form-group">
+            <input asp-for="Password" class="form-control" placeholder="password" />
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <button type="submit" class="btn btn-lg btn-primary">Log in</button>
+        </div>
+        <div class="form-group options-container">
+            <p class="text-center">No Account? @Html.ActionLink("Register.", "Register")</p>
+        </div>
+
+    </form>
+</div>

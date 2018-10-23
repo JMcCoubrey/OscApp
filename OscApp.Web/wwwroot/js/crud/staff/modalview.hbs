@@ -1,0 +1,51 @@
+﻿<div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<div id="title" class="crud-modal-title-main">Create / Edit <span data-term="trainer">Staff</span></div>
+			<div id="sub-title" class="crud-modal-title-sub">{{id}}</div>
+		</div>
+        <div class="modal-body">
+            <div class="lds-ellipsis" style="display: none;"><div></div><div></div><div></div><div></div></div>
+            <div class="content">
+
+                <div class="alert alert-danger" id="error-container" style="display: none;"></div>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <label for="id">Id</label>
+                        <span class="req-icon">*</span>
+                        <input type="text" class="form-control" id="id-input" value="{{id}}" />
+                    </div>
+
+                    <div class="col-md-8">
+                        <label for="start-input">Description</label>
+                        <input type="text" class="form-control" id="desc-input" value="{{description}}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="capacity-input">Forename</label>
+                        <input class="form-control" id="forename-input" type="text" value="{{forename}}" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="capacity-input">Surname</label>
+                        <input class="form-control" id="surname-input" type="text" value="{{surname}}" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="capacity-input">Line Manager</label>
+                        <input class="form-control" id="linemanager-input" type="text" value="{{lineManager}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="save-btn" disabled>Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close <span class="glyphicon glyphicon-ban-circle"></span></button>
+        </div>
+    </div>
+</div>

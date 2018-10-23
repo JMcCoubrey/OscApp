@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Osc App</title>
+</head>
+<body>
+
+    @await Html.PartialAsync("_NavBar")
+    <div id="page-wrapper">
+        <div id="side-nav" class="side-nav">
+            <div class="side-nav-header-items">
+                <div class="tm-icon">
+                    <span class="osci osci-autoscheduler"></span>
+                </div>
+            </div>
+            <div class="side-nav-items">
+                <a asp-controller="Home" asp-action="Index"><span class="osci osci-home"></span><span class="text">Home</span></a>
+                <a href="#" id="data-nav-item"><span class="osci osci-data"></span><span class="text">Data Management </span></a>
+                <div class="side-nav-child-items">
+                    <a asp-controller="Staff" asp-action="Index"><span class="osci osci-person"></span><span class="text"><span data-term="trainer" class="text-capitalize">Trainer</span></span></a>
+                </div>
+            </div>
+            <div class="side-nav-footer-items">
+                <div class="optime-logo"></div>
+            </div>
+        </div>
+
+
+        @RenderBody()
+
+    </div>
+    @RenderSection("Scripts", required: true)
+</body>
+</html>

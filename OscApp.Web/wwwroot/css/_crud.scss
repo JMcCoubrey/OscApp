@@ -1,0 +1,40 @@
+﻿@import 'shared.scss';
+
+tr.new {
+    background: var(--apple-green);
+}
+
+h2 {
+    font-size: 23px;
+    color: var(--dark);
+}
+
+/* Modals */
+.modal {
+	.modal-body {
+		background: var(--pale-grey);
+	}
+
+	.bootstrap-select {
+		border: 1px solid #ced4da;
+	}
+
+	.req-icon {
+		font-weight: 900;
+		color: var(--red);
+	}
+
+	.modal-header .crud-modal-title-main {
+		color: #adafb2;
+		text-transform: uppercase;
+		font-size: 15px;
+	}
+
+	.modal-header .crud-modal-title-sub {
+		color: #354052;
+		font-size: 18px;
+		font-weight: 600;
+		margin-top: 5px;
+		text-transform: uppercase;
+	}
+}

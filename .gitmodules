@@ -1,0 +1,3 @@
+[submodule "Osc.Db"]
+	path = Osc.Db
+	url = git@github.com:Eventmap/Osc.Db

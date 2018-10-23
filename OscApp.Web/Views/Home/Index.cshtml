@@ -1,0 +1,56 @@
+﻿@{
+	ViewData["Title"] = "Home";
+}
+
+<div class="jumbotron">
+
+    <p>This is the landing page jumbotron.  It's usually used for some quick info such as data stats, but you can use it for whatever you like.</p>
+
+</div>
+
+<div class="container-fluid" id="main-content">
+
+	<div class="row">
+		<div class="col-lg-11 offset-lg-1">
+			<h2>Welcome to the OSC App Template.</h2>
+            <p>This project is intended to be used as a wireframe for future web applications started at EventMAP  This project generally follows our standard architecture, which at a very high level is:</p>
+            <ul>
+                <li><strong>Osc.Db</strong>, which is an EntityFramework Core class library.  It represents the shared Osc data model which all OSC applications use.</li>
+                <li>ASP.NET Core 2.1 Web application, with both REST-like controllers and MvC Controllers</li>
+                <li>
+                    Backbone Marionette views of two types:
+                    <ul>
+                        <li>Views attached to server-side rendered DOM</li>
+                        <li>Views with their own Handlebars templates</li>
+                    </ul>
+                </li>
+                <li>Backbone Models</li>
+                <li>Sass stylesheets</li>
+                <li>Bootstrap UI Components</li>
+                <li>Webpack</li>
+            </ul>
+
+            <p>Included in this project is a very basic example CRUD view for <strong>staff</strong>.  This example is good as it shows both server-side rendering, and client side rendering.  Study the JavaScript in wwwroot/js/staff.  Notice the abstract views used (one level up) which may be re-used for other CRUD views you add.</p>
+
+            <h2>Required Reading</h2>
+            <p>I reccommend you read the following to help you understand the architecture:</p>
+            <ul>
+                <li><a href="https://marionettejs.com/docs/current/">Backbone Marionette source code</a></li>
+                <li><a href="http://pragmatic-backbone.com/">Pragmatic Backbone</a></li>
+                <li><a href="https://www.learnentityframeworkcore.com/">Learn Entity Framework Core</a></li>
+                <li><a href="https://sass-lang.com/guide">Sass Basics</a></li>
+                <li><a href="https://handlebarsjs.com/">Handlebars</a></li>
+                <li><a href="https://getbootstrap.com/docs/3.3/getting-started/">Bootstrap Docs</a></li>
+            </ul>
+            <p class="text-right"> - Mike</p>
+		</div>
+	</div>
+
+	<div class="row">
+
+	</div>
+</div>
+
+@section Scripts {
+	@Html.WebpackAsset("home")
+}
