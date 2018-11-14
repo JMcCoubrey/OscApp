@@ -31,7 +31,7 @@ namespace OscApp.Web
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, ApplicationRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
@@ -40,11 +40,8 @@ namespace OscApp.Web
             services.AddEntityFrameworkSqlServer();
 
             services.AddTransient<IEmailSender, EmailSender>();
-            services.AddTransient<IApplicationDbContext, ApplicationDbContext>();
-            services.AddTransient<ITenancyRepository, TenancyRepository>();
             services.AddTransient<ITrainerRepository, TrainerRepository>();
-
-            services.AddMultitenancy<Tenancy, CachingTenantResolver>();
+            
 
 			services.AddMvc().AddJsonOptions(options =>
 			{
@@ -70,8 +67,6 @@ namespace OscApp.Web
             app.UseStaticFiles();
 
             app.UseAuthentication();
-
-            app.UseMultitenancy<Tenancy>();
 
             app.UseMvc(routes =>
             {

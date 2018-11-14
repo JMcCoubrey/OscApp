@@ -19,7 +19,6 @@ namespace OscApp.Web.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly ITenancyRepository _tenancyRepo;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
 
@@ -27,14 +26,12 @@ namespace OscApp.Web.Controllers
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger,
-            ITenancyRepository tenancyRepo)
+            ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
-            _tenancyRepo = tenancyRepo;
         }
 
         [TempData]
@@ -233,9 +230,6 @@ namespace OscApp.Web.Controllers
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
 
-
-                    // Create a fresh tenancy for the new user
-                    _tenancyRepo.CreateTenancy(model.TenancyName, user.Id);
 
                     return RedirectToLocal(returnUrl);
                 }
